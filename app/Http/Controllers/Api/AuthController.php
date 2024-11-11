@@ -46,7 +46,7 @@ class AuthController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type' => 'Bearer',
-        ]);
+        ])->cookie('token', $token, 60 * 24 * 7, null, null, true, true);
     }
 
     // Logout user
@@ -59,6 +59,11 @@ class AuthController extends Controller
     // Mendapatkan informasi user yang sedang login
     public function profile()
     {
-        return response()->json(auth()->user());
+        try {
+            $user = auth()->user(); // Memastikan auth() dapat mengambil user
+            return response()->json($user);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
     }
 }

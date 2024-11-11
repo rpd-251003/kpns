@@ -17,11 +17,11 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('role')->default('member');;
-            $table->string('pricture');
-            $table->string('total_simpanan');
-            $table->string('is_paid');
-            $table->string('expired');
+            $table->string('role')->default('member');
+            $table->string('pricture')->nullable();
+            $table->string('total_simpanan')->nullable();
+            $table->string('is_paid')->nullable();
+            $table->string('expired')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
