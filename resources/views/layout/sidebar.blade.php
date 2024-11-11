@@ -7,8 +7,6 @@
 
 @if ($user['role'] == 'member')
 
-@dd($user)
-
 Ini Untuk Member
 
 @endif
