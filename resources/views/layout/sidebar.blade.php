@@ -6,19 +6,19 @@
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="/dashboard">
+    <a class="nav-link" href="/sipitung">
         <span class="menu-title">Bagi Hasil SiPitung</span>
         <i class="mdi mdi-cash-multiple menu-icon"></i> <!-- Icon Bagi Hasil -->
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="/dashboard">
+    <a class="nav-link" href="/histori">
         <span class="menu-title">Histori</span>
         <i class="mdi mdi-history menu-icon"></i> <!-- Icon Histori -->
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="/dashboard">
+    <a class="nav-link" href="/bagikan">
         <span class="menu-title">Bagikan Info KPNS</span>
         <i class="mdi mdi-share-variant menu-icon"></i> <!-- Icon Bagikan Info -->
     </a>
