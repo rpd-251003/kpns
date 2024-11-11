@@ -43,13 +43,13 @@ class AuthController extends Controller
             return response()->json(['message' => 'Unauthorized'], 401);
         }
 
+        // Ensure token exists before setting it in the cookie
         return response()->json([
             'access_token' => $token,
             'token_type' => 'Bearer',
-        ])->cookie('token', $token, 60 * 24 * 7, null, null, true, true);
+        ])->cookie('token', $token, 60 * 24 * 7, '/', null, true, true);
     }
-
-    // Logout user
+        // Logout user
     public function logout()
     {
         JWTAuth::invalidate(JWTAuth::getToken());
