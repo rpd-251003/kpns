@@ -28,10 +28,10 @@
         <!-- partial:../../partials/_navbar.html -->
         <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
-                <a class="navbar-brand brand-logo" href="{{ BASE_URL }}/dist/index.html"><img
-                        src="{{ BASE_URL }}/dist/assets/images/logo.svg" alt="logo" /></a>
-                <a class="navbar-brand brand-logo-mini" href="{{ BASE_URL }}/dist/index.html"><img
-                        src="{{ BASE_URL }}/dist/assets/images/logo-mini.svg" alt="logo" /></a>
+                <a class="navbar-brand brand-logo" href="/public/dist/index.html"><img
+                        src="/public/dist/assets/images/logo.svg" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="/public/dist/index.html"><img
+                        src="/public/dist/assets/images/logo-mini.svg" alt="logo" /></a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-stretch">
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -53,7 +53,7 @@
                         <a class="nav-link dropdown-toggle" id="profileDropdown" href="#"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <div class="nav-profile-img">
-                                <img src="{{ BASE_URL }}/dist/assets/images/faces/face1.jpg" alt="image">
+                                <img src="/public/dist/assets/images/faces/face1.jpg" alt="image">
                                 <span class="availability-status online"></span>
                             </div>
                             <div class="nav-profile-text">
@@ -85,7 +85,7 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item preview-item">
                                 <div class="preview-thumbnail">
-                                    <img src="{{ BASE_URL }}/dist/assets/images/faces/face4.jpg" alt="image"
+                                    <img src="/public/dist/assets/images/faces/face4.jpg" alt="image"
                                         class="profile-pic">
                                 </div>
                                 <div
@@ -98,7 +98,7 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item preview-item">
                                 <div class="preview-thumbnail">
-                                    <img src="{{ BASE_URL }}/dist/assets/images/faces/face2.jpg" alt="image"
+                                    <img src="/public/dist/assets/images/faces/face2.jpg" alt="image"
                                         class="profile-pic">
                                 </div>
                                 <div
@@ -111,7 +111,7 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item preview-item">
                                 <div class="preview-thumbnail">
-                                    <img src="{{ BASE_URL }}/dist/assets/images/faces/face3.jpg" alt="image"
+                                    <img src="/public/dist/assets/images/faces/face3.jpg" alt="image"
                                         class="profile-pic">
                                 </div>
                                 <div
@@ -203,7 +203,7 @@
                     <li class="nav-item nav-profile">
                         <a href="#" class="nav-link">
                             <div class="nav-profile-image">
-                                <img src="{{ BASE_URL }}/dist/assets/images/faces/face1.jpg" alt="profile" />
+                                <img src="/public/dist/assets/images/faces/face1.jpg" alt="profile" />
                                 <span class="login-status online"></span>
                                 <!--change to offline or busy as needed-->
                             </div>
@@ -215,7 +215,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ BASE_URL }}/dist/index.html">
+                        <a class="nav-link" href="/public/dist/index.html">
                             <span class="menu-title">Dashboard</span>
                             <i class="mdi mdi-home menu-icon"></i>
                         </a>
@@ -231,15 +231,15 @@
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
                                     <a class="nav-link"
-                                        href="{{ BASE_URL }}/dist/pages/ui-features/buttons.html">Buttons</a>
+                                        href="/public/dist/pages/ui-features/buttons.html">Buttons</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link"
-                                        href="{{ BASE_URL }}/dist/pages/ui-features/dropdowns.html">Dropdowns</a>
+                                        href="/public/dist/pages/ui-features/dropdowns.html">Dropdowns</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link"
-                                        href="{{ BASE_URL }}/dist/pages/ui-features/typography.html">Typography</a>
+                                        href="/public/dist/pages/ui-features/typography.html">Typography</a>
                                 </li>
                             </ul>
                         </div>
@@ -254,7 +254,7 @@
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
                                     <a class="nav-link"
-                                        href="{{ BASE_URL }}/dist/pages/icons/font-awesome.html">Font Awesome</a>
+                                        href="/public/dist/pages/icons/font-awesome.html">Font Awesome</a>
                                 </li>
                             </ul>
                         </div>
@@ -269,7 +269,7 @@
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
                                     <a class="nav-link"
-                                        href="{{ BASE_URL }}/dist/pages/forms/basic_elements.html">Form
+                                        href="/public/dist/pages/forms/basic_elements.html">Form
                                         Elements</a>
                                 </li>
                             </ul>
@@ -285,7 +285,7 @@
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
                                     <a class="nav-link"
-                                        href="{{ BASE_URL }}/dist/pages/charts/chartjs.html">ChartJs</a>
+                                        href="/public/dist/pages/charts/chartjs.html">ChartJs</a>
                                 </li>
                             </ul>
                         </div>
@@ -300,7 +300,7 @@
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
                                     <a class="nav-link"
-                                        href="{{ BASE_URL }}/dist/pages/tables/basic-table.html">Basic table</a>
+                                        href="/public/dist/pages/tables/basic-table.html">Basic table</a>
                                 </li>
                             </ul>
                         </div>
@@ -316,29 +316,29 @@
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
                                     <a class="nav-link"
-                                        href="{{ BASE_URL }}/dist/pages/samples/blank-page.html"> Blank Page </a>
+                                        href="/public/dist/pages/samples/blank-page.html"> Blank Page </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ BASE_URL }}/dist/pages/samples/login.html">
+                                    <a class="nav-link" href="/public/dist/pages/samples/login.html">
                                         Login </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ BASE_URL }}/dist/pages/samples/register.html">
+                                    <a class="nav-link" href="/public/dist/pages/samples/register.html">
                                         Register </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ BASE_URL }}/dist/pages/samples/error-404.html">
+                                    <a class="nav-link" href="/public/dist/pages/samples/error-404.html">
                                         404 </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ BASE_URL }}/dist/pages/samples/error-500.html">
+                                    <a class="nav-link" href="/public/dist/pages/samples/error-500.html">
                                         500 </a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ BASE_URL }}/dist/docs/documentation.html" target="_blank">
+                        <a class="nav-link" href="/public/dist/docs/documentation.html" target="_blank">
                             <span class="menu-title">Documentation</span>
                             <i class="mdi mdi-file-document-box menu-icon"></i>
                         </a>
