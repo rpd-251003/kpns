@@ -5,7 +5,9 @@
     </a>
 </li>
 
-@if ($user->role == 'member')
+@if ($user['role'] == 'member')
+
+@dd($user)
 
 Ini Untuk Member
 
