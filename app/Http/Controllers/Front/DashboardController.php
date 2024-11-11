@@ -19,7 +19,7 @@ class DashboardController extends Controller
         }
 
         // API URL
-        $url = url('http://192.168.0.5:8000/api/profile');
+        $url = url('/api/profile');
 
         try {
             $response = Http::withToken($token)->timeout(5)->get($url);
