@@ -19,7 +19,7 @@ class DashboardController extends Controller
         }
 
         // API URL
-        $url = url('127.0.0.1:8000/api/profile');
+        $url = url('https://kpns.wiratraining.com/api/profile');
 
         try {
             $response = Http::withToken($token)->timeout(5)->get($url);

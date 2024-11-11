@@ -72,17 +72,6 @@
     <!-- AJAX Script for Login -->
     <script>
         $(document).ready(function() {
-            function setCookie(name, value, days) {
-                var expires = "";
-                if (days) {
-                    var date = new Date();
-                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // days in milliseconds
-                    expires = "; expires=" + date.toUTCString();
-                }
-                document.cookie = name + "=" + (value || "") + expires + "; path=/; Secure; HttpOnly";
-            }
-
-
             $('#loginForm').submit(function(e) {
                 e.preventDefault(); // Mencegah form melakukan submit secara default
 
@@ -91,7 +80,7 @@
                 let password = $('#password').val();
 
                 $.ajax({
-                    url: '/api/login', // Ganti dengan URL API login Anda
+                    url: 'https://kpns.wiratraining.com/api/login', // Ganti dengan URL API login Anda
                     type: 'POST',
                     contentType: 'application/json',
                     dataType: 'json',
@@ -100,10 +89,11 @@
                         password: password
                     }),
                     success: function(response) {
-                        setCookie('token', response.access_token,
-                        7); // Menyimpan token selama 7 hari
+                        // Menyimpan token di localStorage
+                        localStorage.setItem('token', response.access_token);
+
                         alert('Login berhasil!');
-                        window.location('/dashboard');
+                        window.location.href = '/dashboard'; // Redirect ke dashboard
                     },
                     error: function(xhr, status, error) {
                         alert('Login gagal! Silakan periksa email dan password Anda.');
