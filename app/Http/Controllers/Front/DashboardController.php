@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Front;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Http;
 
 class DashboardController extends Controller
@@ -30,11 +31,10 @@ class DashboardController extends Controller
 
             $user = $response->json();
 
-            // dd($token);
-
-            // if ($user['name'] == null) {
-            //     return redirect()->route('login')->withErrors(['msg' => 'Gagal mengambil data profil. Silakan login kembali.']);
-            // }
+            if ($user['name'] == null) {
+                Cookie::queue(Cookie::forget('token'));
+                return redirect()->route('login')->withErrors(['msg' => 'Gagal mengambil data profil. Silakan login kembali.']);
+            }
 
             return view('user.dashboard', compact('user'));
         } catch (\Exception $e) {

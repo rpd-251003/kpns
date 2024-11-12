@@ -28,9 +28,8 @@
         <!-- partial:../../partials/_navbar.html -->
         <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
-                <a class="navbar-brand brand-logo text-success fw-bold" href="/../public/dist/index.html">KPNS</a>
-                <a class="navbar-brand brand-logo-mini" href="/../public/dist/index.html"><img
-                        src="{{ asset('dist/assets/images/logo-mini.svg') }}" alt="logo" /></a>
+                <a class="navbar-brand brand-logo text-success fw-bold" href="/dashboard">KPNS</a>
+                <a class="navbar-brand brand-logo-mini text-success fw-bold" href="/dashboard">KPNS</a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-stretch">
                 <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -56,7 +55,7 @@
                                 <span class="availability-status online"></span>
                             </div>
                             <div class="nav-profile-text">
-                                <p class="mb-1 text-black">David Greymaax</p>
+                                <p class="mb-1 text-black">{{ $user['name'] }}</p>
                             </div>
                         </a>
                         <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">

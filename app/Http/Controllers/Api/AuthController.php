@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthController extends Controller
@@ -41,8 +42,10 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (!$token = JWTAuth::attempt($credentials)) {
+            Log::error('Failed JWT attempt', ['credentials' => $credentials]);
             return response()->json(['message' => 'Unauthorized'], 401);
         }
+
 
         // Hapus cookie lama
         Cookie::queue(Cookie::forget('token'));
