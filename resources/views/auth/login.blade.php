@@ -22,8 +22,8 @@
                 <div class="row flex-grow">
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-left p-5">
-                            <div class="brand-logo">
-                                <img src="{{ asset('dist/assets/images/logo.svg') }}">
+                            <div class="brand-logo text-success fw-bold">
+                                KPNS
                             </div>
                             <h4>Hello! let's get started</h4>
                             <h6 class="font-weight-light">Sign in to continue.</h6>
@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="mt-3 d-grid gap-2">
                                     <button type="submit"
-                                        class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">SIGN
+                                        class="btn btn-block btn-gradient-success btn-lg font-weight-medium auth-form-btn">SIGN
                                         IN</button>
                                 </div>
                                 <div class="my-2 d-flex justify-content-between align-items-center">
@@ -46,10 +46,10 @@
                                         <label class="form-check-label text-muted">
                                             <input type="checkbox" class="form-check-input"> Keep me signed in </label>
                                     </div>
-                                    <a href="#" class="auth-link text-primary">Forgot password?</a>
+                                    <a href="#" class="auth-link text-success">Forgot password?</a>
                                 </div>
                                 <div class="text-center mt-4 font-weight-light"> Don't have an account? <a
-                                        href="register.html" class="text-primary">Create</a>
+                                        href="register.html" class="text-success">Create</a>
                                 </div>
                             </form>
                         </div>
