@@ -56,7 +56,7 @@ class AuthController extends Controller
             60 * 24 * 30,     // Durasi dalam menit (1 bulan)
             '/',              // Path
             null,             // Domain (misalnya localhost atau domain aplikasi)
-            null,            // Secure (hanya dikirim melalui HTTPS)
+            true,             // Secure (hanya dikirim melalui HTTPS)
             true              // HttpOnly (tidak bisa diakses oleh JavaScript)
         );
     }
