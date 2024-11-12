@@ -36,26 +36,27 @@ class AuthController extends Controller
 
     // Login user
     public function login(Request $request)
-    {
-        $credentials = $request->only('email', 'password');
+{
+    $credentials = $request->only('email', 'password');
 
-        if (!$token = JWTAuth::attempt($credentials)) {
-            return response()->json(['message' => 'Unauthorized'], 401);
-        }
-
-        return response()->json([
-            'access_token' => $token,
-            'token_type' => 'Bearer',
-        ])->cookie(
-            'token',         // Cookie name
-            $token,          // Cookie value (JWT token)
-            60 * 24 * 7,     // Duration in minutes (1 week)
-            null,             // Path
-            null,   // Domain (your IP address in this case)
-            null,            // Secure (only sent over HTTPS)
-            false             // HttpOnly (not accessible by JavaScript)
-        );
+    if (!$token = JWTAuth::attempt($credentials)) {
+        return response()->json(['message' => 'Unauthorized'], 401);
     }
+
+    return response()->json([
+        'access_token' => $token,
+        'token_type' => 'Bearer',
+    ])->cookie(
+        'token',         // Nama Cookie
+        $token,          // Nilai Cookie (JWT token)
+        60 * 24 * 30,    // Durasi dalam menit (1 bulan)
+        '/',             // Path
+        null,            // Domain (misalnya localhost atau domain aplikasi)
+        false,           // Secure (hanya dikirim melalui HTTPS)
+        true             // HttpOnly (tidak bisa diakses oleh JavaScript)
+    );
+}
+
 
     // Logout user
     public function logout()
