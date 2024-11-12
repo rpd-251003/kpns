@@ -88,7 +88,9 @@
                                 <label for="nomor_wa" class="form-label">Nomor WA</label>
                                 <input type="text" class="form-control" id="nomor_wa" name="nomor_wa">
                             </div>
-                            <p>Data Bank Untuk Bagi Hasil</p>
+                            <br>
+                            <p class="fw-bold">Data Bank Untuk Bagi Hasil</p>
+                            <hr>
                             <div class="mb-3">
                                 <label for="nama_bank" class="form-label">Nama Bank</label>
                                 <input type="text" class="form-control" id="nama_bank" name="nama_bank">

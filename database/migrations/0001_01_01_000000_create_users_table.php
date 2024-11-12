@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('role')->default('member');
-            $table->string('pricture')->nullable();
+            $table->string('picture')->nullable();
             $table->string('total_simpanan')->nullable();
             $table->string('is_paid')->nullable();
             $table->string('expired')->nullable();

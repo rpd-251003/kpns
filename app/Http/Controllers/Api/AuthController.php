@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Tymon\JWTAuth\Facades\JWTAuth;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthController extends Controller
 {
@@ -36,26 +37,30 @@ class AuthController extends Controller
 
     // Login user
     public function login(Request $request)
-{
-    $credentials = $request->only('email', 'password');
+    {
+        $credentials = $request->only('email', 'password');
 
-    if (!$token = JWTAuth::attempt($credentials)) {
-        return response()->json(['message' => 'Unauthorized'], 401);
+        if (!$token = JWTAuth::attempt($credentials)) {
+            return response()->json(['message' => 'Unauthorized'], 401);
+        }
+
+        // Hapus cookie lama
+        Cookie::queue(Cookie::forget('token'));
+
+        // Tambahkan cookie baru
+        return response()->json([
+            'access_token' => $token,
+            'token_type' => 'Bearer',
+        ])->cookie(
+            'token',          // Nama Cookie
+            $token,           // Nilai Cookie (JWT token)
+            60 * 24 * 30,     // Durasi dalam menit (1 bulan)
+            '/',              // Path
+            null,             // Domain (misalnya localhost atau domain aplikasi)
+            false,            // Secure (hanya dikirim melalui HTTPS)
+            true              // HttpOnly (tidak bisa diakses oleh JavaScript)
+        );
     }
-
-    return response()->json([
-        'access_token' => $token,
-        'token_type' => 'Bearer',
-    ])->cookie(
-        'token',         // Nama Cookie
-        $token,          // Nilai Cookie (JWT token)
-        60 * 24 * 30,    // Durasi dalam menit (1 bulan)
-        '/',             // Path
-        null,            // Domain (misalnya localhost atau domain aplikasi)
-        false,           // Secure (hanya dikirim melalui HTTPS)
-        true             // HttpOnly (tidak bisa diakses oleh JavaScript)
-    );
-}
 
 
     // Logout user

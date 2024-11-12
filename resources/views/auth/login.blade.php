@@ -80,7 +80,7 @@
                 let password = $('#password').val();
 
                 $.ajax({
-                    url: 'http://127.0.0.1:8000/api/login', // Ganti dengan URL API login Anda
+                    url: 'https://kpns.wiratraining.com/api/login', // Ganti dengan URL API login Anda
                     type: 'POST',
                     contentType: 'application/json',
                     dataType: 'json',
