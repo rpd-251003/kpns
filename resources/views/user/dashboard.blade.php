@@ -26,7 +26,7 @@
                 <div class="card-body">
                     <div class="clearfix">
                         <div class="position-relative d-inline-block" id="profileContainer" style="cursor: pointer;">
-                            <img src="https://buffer.com/library/content/images/2022/03/amina.png" id="profilePicture"
+                            <img src="/storage/{{ $user['picture'] }}" id="profilePicture"
                                 class="rounded-circle img-fluid mb-3" alt="Profile Picture">
                             <span id="uploadIcon" class="position-absolute top-50 start-50 translate-middle text-white"
                                 style="display: none; font-size: 2rem; font-weight: bold;">+</span>
