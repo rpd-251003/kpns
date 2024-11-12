@@ -203,7 +203,7 @@
                     <li class="nav-item nav-profile">
                         <a href="#" class="nav-link">
                             <div class="nav-profile-image">
-                                <img src="/../public/dist/assets/images/faces/face1.jpg" alt="profile" />
+                                <img src="https://buffer.com/library/content/images/2022/03/amina.png" alt="profile" />
                                 <span class="login-status online"></span>
                                 <!--change to offline or busy as needed-->
                             </div>
