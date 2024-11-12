@@ -53,7 +53,7 @@
                         <a class="nav-link dropdown-toggle" id="profileDropdown" href="#"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <div class="nav-profile-img">
-                                <img src="/../public/dist/assets/images/faces/face1.jpg" alt="image">
+                                <img src="https://buffer.com/library/content/images/2022/03/amina.png" alt="image">
                                 <span class="availability-status online"></span>
                             </div>
                             <div class="nav-profile-text">
@@ -85,7 +85,7 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item preview-item">
                                 <div class="preview-thumbnail">
-                                    <img src="/../public/dist/assets/images/faces/face4.jpg" alt="image"
+                                    <img src="https://buffer.com/library/content/images/2022/03/amina.png" alt="image"
                                         class="profile-pic">
                                 </div>
                                 <div
@@ -98,7 +98,7 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item preview-item">
                                 <div class="preview-thumbnail">
-                                    <img src="/../public/dist/assets/images/faces/face2.jpg" alt="image"
+                                    <img src="https://buffer.com/library/content/images/2022/03/amina.png" alt="image"
                                         class="profile-pic">
                                 </div>
                                 <div
