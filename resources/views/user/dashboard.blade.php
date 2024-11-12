@@ -3,7 +3,7 @@
 @section('content')
     <div class="page-header">
         <h3 class="page-title">
-            <span class="page-title-icon bg-gradient-primary text-white mr-2">
+            <span class="page-title-icon bg-gradient-success text-white mr-2">
                 <i class="mdi mdi-home"></i>
             </span> Dashboard Anggota
         </h3>
@@ -101,10 +101,8 @@
                                 <label for="nomor_bank" class="form-label">Nomor Rekening Bank</label>
                                 <input type="text" class="form-control" id="nomor_bank" name="nomor_bank">
                             </div>
-                            <button type="submit" class="btn mb-2 col-12 btn-primary">Submit</button>
                         </form>
                     </div>
-                    <canvas id="visit-sale-chart" class="mt-4"></canvas>
                 </div>
             </div>
         </div>
