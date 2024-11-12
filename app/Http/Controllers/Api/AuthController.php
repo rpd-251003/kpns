@@ -46,10 +46,6 @@ class AuthController extends Controller
             return response()->json(['message' => 'Unauthorized'], 401);
         }
 
-
-        // Hapus cookie lama
-        Cookie::queue(Cookie::forget('token'));
-
         // Tambahkan cookie baru
         return response()->json([
             'access_token' => $token,
