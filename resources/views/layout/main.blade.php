@@ -51,7 +51,7 @@
                         <a class="nav-link dropdown-toggle" id="profileDropdown" href="#"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <div class="nav-profile-img">
-                                <img src="{{ $user['picture'] }}" alt="image">
+                                <img src="/storage/{{ $user['picture'] }}" alt="image">
                                 <span class="availability-status online"></span>
                             </div>
                             <div class="nav-profile-text">
@@ -83,7 +83,7 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item preview-item">
                                 <div class="preview-thumbnail">
-                                    <img src="{{ $user['picture'] }}" alt="image"
+                                    <img src="/storage/{{ $user['picture'] }}" alt="image"
                                         class="profile-pic">
                                 </div>
                                 <div
@@ -96,7 +96,7 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item preview-item">
                                 <div class="preview-thumbnail">
-                                    <img src="{{ $user['picture'] }}" alt="image"
+                                    <img src="/storage/{{ $user['picture'] }}" alt="image"
                                         class="profile-pic">
                                 </div>
                                 <div
@@ -201,7 +201,7 @@
                     <li class="nav-item nav-profile">
                         <a href="#" class="nav-link">
                             <div class="nav-profile-image">
-                                <img src="{{ $user['picture'] }}" alt="profile" />
+                                <img src="/storage/{{ $user['picture'] }}" alt="profile" />
                                 <span class="login-status online"></span>
                                 <!--change to offline or busy as needed-->
                             </div>
