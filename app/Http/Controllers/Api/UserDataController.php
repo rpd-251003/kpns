@@ -55,6 +55,7 @@ class UserDataController extends Controller
 
     public function update(Request $request)
     {
+        // Validasi input
         $validatedData = $request->validate([
             'nama_lengkap' => 'required|string|max:255',
             'tanggal_lahir' => 'required|date|before:today',
@@ -70,19 +71,18 @@ class UserDataController extends Controller
             'nomor_wa' => 'nullable|string|max:15',
             'nama_bank' => 'nullable|string|max:100',
             'nama_pemilik' => 'nullable|string|max:100',
-            'nomor_bank' => 'nullable|string|max:20',
+            'nomor_bank' => 'nullable|string|max:50',
         ]);
 
-        $userData = Auth::user()->userData;
+        // Ambil user data atau buat baru jika belum ada
+        $userData = Auth::user()->userData()->updateOrCreate(
+            ['user_id' => Auth::id()], // Kondisi pencarian data yang ada
+            $validatedData // Data yang akan diperbarui atau dibuat
+        );
 
-        if (!$userData) {
-            return response()->json(['message' => 'User data not found'], 404);
-        }
-
-        $userData->update($validatedData);
-
-        return response()->json(['message' => 'User data updated successfully', 'data' => $userData]);
+        return response()->json(['message' => 'User data updated or created successfully', 'data' => $userData]);
     }
+
 
     public function delete()
     {

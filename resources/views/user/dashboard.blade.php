@@ -124,7 +124,7 @@
                     <div class="clearfix">
                         <a href="" class="btn mb-2 col-12 btn-secondary">Ubah Password</a>
                         <a href="" class="btn mb-2 col-12 btn-secondary">Ubah no.Wa / Rek Bank</a>
-                        <a href="" class="btn mb-2 col-12 btn-success">Simpan</a>
+                        <button type="button" id="submitForm" class="btn mb-2 col-12 btn-success">Simpan</button>
                     </div>
                 </div>
             </div>
@@ -172,6 +172,65 @@
                         console.error('Error:', xhr.responseText);
                     }
                 });
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            // Fungsi untuk submit form menggunakan AJAX
+            $('#submitForm').on('click', function(e) {
+                e.preventDefault(); // Mencegah default action (misal reload)
+
+                // Mengambil data dari form
+                let formData = {
+                    nama_lengkap: $('#nama_lengkap').val(),
+                    tanggal_lahir: $('#tanggal_lahir').val(),
+                    nomor_ktp: $('#nomor_ktp').val(),
+                    alamat: $('#alamat').val(),
+                    rt: $('#rt').val(),
+                    rw: $('#rw').val(),
+                    kelurahan: $('#kelurahan').val(),
+                    kecamatan: $('#kecamatan').val(),
+                    kabupaten_kota: $('#kabupaten_kota').val(),
+                    provinsi: $('#provinsi').val(),
+                    kode_pos: $('#kode_pos').val(),
+                    nomor_wa: $('#nomor_wa').val(),
+                    nama_bank: $('#nama_bank').val(),
+                    nama_pemilik: $('#nama_pemilik').val(),
+                    nomor_bank: $('#nomor_bank').val(),
+                };
+
+                // Mendapatkan token JWT dari localStorage
+                let token = localStorage.getItem('token');
+
+                // Melakukan AJAX request
+                $.ajax({
+                    url: '{{ config('app.api_url') }}/api/member/user-data/update', // Ganti dengan URL API Anda
+                    type: 'PUT',
+                    data: JSON.stringify(formData),
+                    contentType: 'application/json',
+                    headers: {
+                        'Authorization': 'Bearer ' + token,
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr(
+                            'content') // Hanya jika CSRF diperlukan
+                    },
+                    success: function(response) {
+                        // Berhasil memperbarui data
+                        alert('Data berhasil diperbarui.');
+                        console.log(response);
+                    },
+                    error: function(xhr) {
+                        // Gagal memperbarui data
+                        alert('Gagal memperbarui data: ' + xhr.responseJSON.message);
+                        console.error(xhr);
+                    }
+                });
+            });
+
+            // Prevent form submit if there's a <form> tag around the fields
+            $('form').on('submit', function(e) {
+                e.preventDefault();
             });
         });
     </script>

@@ -23,9 +23,8 @@ Route::middleware('auth:api')->group(function () {
     // member api area *******************************************************************************
     // ************************************************************************************************
 
-    Route::prefix('member')->middleware('role:member')->group(function () {
-
-        Route::prefix('user-data')->middleware('role:member')->group(function () {
+    Route::prefix('member')->group(function () {
+        Route::prefix('user-data')->group(function () {
             Route::get('get', [UserDataController::class, 'getUserData']);
             Route::post('add', [UserDataController::class, 'add']);
             Route::put('update', [UserDataController::class, 'update']);
@@ -46,19 +45,19 @@ Route::middleware('auth:api')->group(function () {
 
     Route::prefix('admin')->middleware('role:admin')->group(function () {
 
-        Route::prefix('deposit')->middleware('role:admin')->group(function () {
+        Route::prefix('deposit')->group(function () {
             Route::post('acc/{id}', [TransactionController::class, 'admin_acc_deposit']);
             Route::post('decline/{id}', [TransactionController::class, 'admin_dec_deposit']);
         });
 
-        Route::prefix('roles')->middleware('role:admin')->group(function () {
+        Route::prefix('roles')->group(function () {
             Route::get('get/', [RolePermissionController::class, 'indexRoles']);
             Route::post('add/', [RolePermissionController::class, 'storeRole']);
             Route::put('update/{id}', [RolePermissionController::class, 'updateRole']);
             Route::delete('delete/{id}', [RolePermissionController::class, 'destroyRole']);
         });
 
-        Route::prefix('permissions')->middleware('role:admin')->group(function () {
+        Route::prefix('permissions')->group(function () {
             Route::get('get/', [RolePermissionController::class, 'indexPermissions']);
             Route::post('add/', [RolePermissionController::class, 'storePermission']);
             Route::put('update/{id}', [RolePermissionController::class, 'updatePermission']);
