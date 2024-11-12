@@ -23,25 +23,26 @@ class UserController extends Controller
             'picture.max' => 'The profile picture must not be larger than 2MB.',
         ]);
 
-        $user = Auth::user();
+        $user = auth()->user();
 
-        // Hapus gambar profil lama jika ada
+        // Delete old profile picture if exists
         if ($user->picture) {
-            Storage::delete($user->picture);
+            Storage::disk('public')->delete($user->picture);
         }
 
-        // Simpan gambar profil baru
-        $path = $request->file('picture')->store('pictures');
+        // Store the new profile picture in the public disk under 'profile_pictures'
+        $path = $request->file('picture')->store('profile_pictures', 'public');
 
-        // Perbarui path gambar profil pengguna
+        // Update user's profile picture path
         $user->picture = $path;
         $user->save();
 
         return response()->json([
             'message' => 'Profile picture updated successfully.',
-            'picture_url' => Storage::url($path)
+            'picture_url' => asset('storage/' . $path)
         ], 200);
     }
+
 
 
     // Function to change password
