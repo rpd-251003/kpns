@@ -20,6 +20,8 @@
             <div class="card">
                 <div class="card-body">
                     <div class="clearfix">
+                        <img src="https://buffer.com/library/content/images/2022/03/amina.png" class="rounded-circle float-start" alt="...">
+
                         <a href="" class="btn btn-secondary">Ubah Password</a>
                         <a href="" class="btn btn-secondary">Ubah no.Wa / Rek Bank</a>
                         <a href="" class="btn btn-success">Simpan</a>
