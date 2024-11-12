@@ -16,7 +16,7 @@
         </nav>
     </div>
     <div class="row">
-        <div class="col-md-3 grid-marrgin stretch-card">
+        <div class="col-xl-3 grid-marrgin stretch-card">
             <div class="card">
                 <div class="card-body">
                     <div class="clearfix">
@@ -33,7 +33,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-7 grid-margin stretch-card">
+        <div class="col-xl-7 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
                     <div class="clearfix">
@@ -55,11 +55,11 @@
                                 <input type="text" class="form-control" id="alamat" name="alamat">
                             </div>
                             <div class="row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-xl-6 mb-3">
                                     <label for="rt" class="form-label">RT</label>
                                     <input type="text" class="form-control" id="rt" name="rt">
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-xl-6 mb-3">
                                     <label for="rw" class="form-label">RW</label>
                                     <input type="text" class="form-control" id="rw" name="rw">
                                 </div>
@@ -106,7 +106,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-2 grid-marrgin stretch-card">
+        <div class="col-xl-2 grid-marrgin stretch-card">
             <div class="card">
                 <div class="card-body">
                     <div class="clearfix">
