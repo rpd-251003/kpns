@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\RolePermissionController;
+use App\Http\Controllers\Api\TransactionController;
+use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\UserDataController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\Api\UserDataController;
-use App\Http\Controllers\Api\TransactionController;
-use App\Http\Controllers\Api\RolePermissionController;
+
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
@@ -13,6 +15,9 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::middleware('auth:api')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/profile', [AuthController::class, 'profile']);
+
+    Route::post('/user/profile-picture', [UserController::class, 'addProfilePicture']);
+    Route::post('/user/change-password', [UserController::class, 'changePassword']);
 
     // ************************************************************************************************
     // member api area *******************************************************************************

@@ -19,17 +19,22 @@ class DashboardController extends Controller
         }
 
         // API URL
-        $url = url('/api/profile');
+        $url = url('https://kpns.wiratraining.com/api/profile');
 
         try {
             $response = Http::withToken($token)->timeout(5)->get($url);
 
             if ($response->failed()) {
-                dd($response->body());
                 return redirect()->route('login')->withErrors(['msg' => 'Gagal mengambil data profil. Silakan login kembali.']);
             }
 
             $user = $response->json();
+
+            // dd($token);
+
+            // if ($user['name'] == null) {
+            //     return redirect()->route('login')->withErrors(['msg' => 'Gagal mengambil data profil. Silakan login kembali.']);
+            // }
 
             return view('user.dashboard', compact('user'));
         } catch (\Exception $e) {
