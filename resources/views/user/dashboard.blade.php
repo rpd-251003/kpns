@@ -21,7 +21,7 @@
                 <div class="card-body">
                     <div class="clearfix">
                         <img src="https://buffer.com/library/content/images/2022/03/amina.png"
-                            class="rounded-circle float-start img-fluid" alt="...">
+                            class="rounded-circle float-start img-fluid mb-3" alt="...">
                         <a href="" class="btn mb-2 col-12 btn-secondary">Nomor ID : KPNS00001</a>
                         <a href="" class="btn mb-2 col-12 btn-secondary">Nama Lengkap</a>
                         <a href="" class="btn mb-2 col-12 btn-secondary"> Total Simpanan</a>
