@@ -1,4 +1,4 @@
-@include('layout.main')
+@extends('layout.main')
 
 @section('content')
     <div class="page-header">
