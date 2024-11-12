@@ -250,6 +250,8 @@
     <script src="{{ asset('dist/assets/js/todolist.js') }}"></script>
     <script src="{{ asset('dist/assets/js/jquery.cookie.js') }}"></script>
 
+    @stack('scripts')
+
     <!-- endinject -->
     <!-- Custom js for this page -->
     <!-- End custom js for this page -->

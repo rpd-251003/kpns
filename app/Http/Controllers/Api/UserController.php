@@ -15,33 +15,34 @@ class UserController extends Controller
     public function addProfilePicture(Request $request)
     {
         $request->validate([
-            'pricture' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'picture' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
-            'pricture.required' => 'Profile picture is required.',
-            'pricture.image' => 'The file must be an image.',
-            'pricture.mimes' => 'Only jpeg, png, jpg, and gif formats are allowed.',
-            'pricture.max' => 'The profile picture must not be larger than 2MB.',
+            'picture.required' => 'Profile picture is required.',
+            'picture.image' => 'The file must be an image.',
+            'picture.mimes' => 'Only jpeg, png, jpg, and gif formats are allowed.',
+            'picture.max' => 'The profile picture must not be larger than 2MB.',
         ]);
 
         $user = Auth::user();
 
-        // Delete old profile picture if exists
-        if ($user->pricture) {
-            Storage::delete($user->pricture);
+        // Hapus gambar profil lama jika ada
+        if ($user->picture) {
+            Storage::delete($user->picture);
         }
 
-        // Store new profile picture
-        $path = $request->file('pricture')->store('prictures');
+        // Simpan gambar profil baru
+        $path = $request->file('picture')->store('pictures');
 
-        // Update user's profile picture path
-        $user->pricture = $path;
+        // Perbarui path gambar profil pengguna
+        $user->picture = $path;
         $user->save();
 
         return response()->json([
             'message' => 'Profile picture updated successfully.',
-            'pricture_url' => Storage::url($path)
+            'picture_url' => Storage::url($path)
         ], 200);
     }
+
 
     // Function to change password
     public function changePassword(Request $request)

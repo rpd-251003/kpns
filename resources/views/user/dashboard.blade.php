@@ -1,6 +1,11 @@
 @extends('layout.main')
 
 @section('content')
+    <style>
+        #profilePicture:hover+#uploadIcon {
+            display: block;
+        }
+    </style>
     <div class="page-header">
         <h3 class="page-title">
             <span class="page-title-icon bg-gradient-success text-white mr-2">
@@ -20,8 +25,13 @@
             <div class="card">
                 <div class="card-body">
                     <div class="clearfix">
-                        <img src="https://buffer.com/library/content/images/2022/03/amina.png"
-                            class="rounded-circle float-start img-fluid mb-3" alt="...">
+                        <div class="position-relative d-inline-block" id="profileContainer" style="cursor: pointer;">
+                            <img src="https://buffer.com/library/content/images/2022/03/amina.png" id="profilePicture"
+                                class="rounded-circle img-fluid mb-3" alt="Profile Picture">
+                            <span id="uploadIcon" class="position-absolute top-50 start-50 translate-middle text-white"
+                                style="display: none; font-size: 2rem; font-weight: bold;">+</span>
+                        </div>
+                        <input type="file" id="profilePictureInput" style="display: none;">
                         <a href="" class="btn mb-2 col-12 btn-secondary">Nomor ID : KPNS00001</a>
                         <a href="" class="btn mb-2 col-12 btn-secondary">Nama Lengkap</a>
                         <a href="" class="btn mb-2 col-12 btn-secondary"> Total Simpanan</a>
@@ -121,3 +131,48 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            // Tampilkan input file saat gambar diklik
+            $('#profileContainer').on('click', function() {
+                $('#profilePictureInput').click();
+            });
+
+            // Ketika file dipilih, unggah dengan AJAX
+            $('#profilePictureInput').on('change', function(event) {
+                let formData = new FormData();
+                formData.append('picture', event.target.files[0]);
+
+                // Ambil token JWT dari localStorage
+                let token = localStorage.getItem('token');
+
+                $.ajax({
+                    url: 'https://kpns.wiratraining.com/api/user/profile-picture',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    headers: {
+                        'Authorization': 'Bearer ' + token,
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr(
+                            'content') // Hanya jika CSRF diperlukan
+                    },
+                    success: function(response) {
+                        // Update gambar profil jika upload berhasil
+                        if (response.picture_url) {
+                            $('#profilePicture').attr('src', response.picture_url);
+                            alert(response.message);
+                        }
+                    },
+                    error: function(xhr) {
+                        console.error('Error:', xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+@endpush
