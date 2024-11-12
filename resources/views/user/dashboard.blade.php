@@ -151,7 +151,7 @@
                 let token = localStorage.getItem('token');
 
                 $.ajax({
-                    url: 'https://kpns.wiratraining.com/api/user/profile-picture',
+                    url: '{{ config('app.api_url') }}/api/user/profile-picture',
                     type: 'POST',
                     data: formData,
                     processData: false,
