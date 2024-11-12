@@ -20,11 +20,15 @@
             <div class="card">
                 <div class="card-body">
                     <div class="clearfix">
-                        <img src="https://buffer.com/library/content/images/2022/03/amina.png" class="rounded-circle float-start img-fluid" alt="...">
-
-                        <a href="" class="btn btn-secondary">Ubah Password</a>
-                        <a href="" class="btn btn-secondary">Ubah no.Wa / Rek Bank</a>
-                        <a href="" class="btn btn-success">Simpan</a>
+                        <img src="https://buffer.com/library/content/images/2022/03/amina.png"
+                            class="rounded-circle float-start img-fluid" alt="...">
+                        <a href="" class="btn mb-2 col-12 btn-secondary">Nomor ID : KPNS00001</a>
+                        <a href="" class="btn mb-2 col-12 btn-secondary">Nama Lengkap</a>
+                        <a href="" class="btn mb-2 col-12 btn-secondary"> Total Simpanan</a>
+                        <a href="" class="btn mb-2 col-12 btn-secondary"> Total Terima Bagi Hasil Harian</a>
+                        <a href="" class="btn mb-2 col-12 btn-secondary"> Total Terima Bagi Hasil Bulanan</a>
+                        <a href="" class="btn mb-2 col-12 btn-secondary"> Total Terima Bagi Hasil Tahunan</a>
+                        <a href="" class="btn mb-2 col-12 btn-secondary"> Total Sudah Ditarik</a>
                     </div>
                 </div>
             </div>
@@ -84,6 +88,7 @@
                                 <label for="nomor_wa" class="form-label">Nomor WA</label>
                                 <input type="text" class="form-control" id="nomor_wa" name="nomor_wa">
                             </div>
+                            <p>Data Bank Untuk Bagi Hasil</p>
                             <div class="mb-3">
                                 <label for="nama_bank" class="form-label">Nama Bank</label>
                                 <input type="text" class="form-control" id="nama_bank" name="nama_bank">
@@ -96,7 +101,7 @@
                                 <label for="nomor_bank" class="form-label">Nomor Rekening Bank</label>
                                 <input type="text" class="form-control" id="nomor_bank" name="nomor_bank">
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn mb-2 col-12 btn-primary">Submit</button>
                         </form>
                     </div>
                     <canvas id="visit-sale-chart" class="mt-4"></canvas>
@@ -107,9 +112,9 @@
             <div class="card">
                 <div class="card-body">
                     <div class="clearfix">
-                        <a href="" class="btn btn-secondary">Ubah Password</a>
-                        <a href="" class="btn btn-secondary">Ubah no.Wa / Rek Bank</a>
-                        <a href="" class="btn btn-success">Simpan</a>
+                        <a href="" class="btn mb-2 col-12 btn-secondary">Ubah Password</a>
+                        <a href="" class="btn mb-2 col-12 btn-secondary">Ubah no.Wa / Rek Bank</a>
+                        <a href="" class="btn mb-2 col-12 btn-success">Simpan</a>
                     </div>
                 </div>
             </div>
