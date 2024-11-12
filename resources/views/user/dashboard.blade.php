@@ -16,11 +16,21 @@
         </nav>
     </div>
     <div class="row">
-        <div class="col-md-4 grid-margin stretch-card">
+        <div class="col-md-3 grid-marrgin stretch-card">
             <div class="card">
                 <div class="card-body">
                     <div class="clearfix">
-                        <h4 class="card-title float-left">Profile Anggota</h4>
+                        <a href="" class="btn btn-secondary">Ubah Password</a>
+                        <a href="" class="btn btn-secondary">Ubah no.Wa / Rek Bank</a>
+                        <a href="" class="btn btn-success">Simpan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="clearfix">
                         <form>
                             <div class="mb-3">
                                 <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
@@ -88,6 +98,17 @@
                         </form>
                     </div>
                     <canvas id="visit-sale-chart" class="mt-4"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 grid-marrgin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="clearfix">
+                        <a href="" class="btn btn-secondary">Ubah Password</a>
+                        <a href="" class="btn btn-secondary">Ubah no.Wa / Rek Bank</a>
+                        <a href="" class="btn btn-success">Simpan</a>
+                    </div>
                 </div>
             </div>
         </div>
